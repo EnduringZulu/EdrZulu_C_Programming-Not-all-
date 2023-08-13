@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 
 int main(){
     float a,b;
@@ -6,7 +7,7 @@ int main(){
     scanf("%f",&a);
     printf("Input b:");
     scanf("%f",&b);
-    double result = (a-b)*(a-b);
+    double result = pow((a - b),2);
     printf("%.2f",result);
     return 0;
 }
