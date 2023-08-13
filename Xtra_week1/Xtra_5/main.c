@@ -30,7 +30,7 @@ int main(){
  int five = remainMoney/5;
  remainMoney = remainMoney%5;
  //Display change amounts of each type of coins
- printf("Here is your changes.\n");
- printf("Ten:%d, Five:%d, One:%D\n",ten,five,remainMoney);
+ printf("Here is your change.\n");
+ printf("Ten:%d, Five:%d, One:%d\n",ten,five,remainMoney);
  return 0;
 }
