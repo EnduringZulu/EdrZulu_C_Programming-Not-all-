@@ -19,7 +19,12 @@ int main(){
     {
         printf("%d%d:%d%d -> Night", one, two, three, four);
     }
-    else{
+    else if (one == 2 && two == 4)
+    {
+        printf("There is no 24 o'clock");
+    }
+    else
+    {
         printf("There was no clock has that 60");
     }
     return 0;
