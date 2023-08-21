@@ -29,6 +29,7 @@ int main(){
         break;
 
     default:
+        printf("We have only 3 menus");
         break;
     }
     return 0;
