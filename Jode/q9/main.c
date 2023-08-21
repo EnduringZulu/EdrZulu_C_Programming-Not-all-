@@ -6,7 +6,10 @@ int main(){
     switch (x)
     {
     case 1:
-        if (y-20>=0){
+        if (y==20){
+            printf("Coffee 20$");
+        }
+        else if (y>20){
             printf("Coffee 20$, with %d change",y-20);
         }
          else{
@@ -14,7 +17,11 @@ int main(){
         }
         break;
     case 2:
-        if (y - 23 >= 0)
+        if (y == 23)
+        {
+            printf("Tea 23$");
+        }
+        else if (y>23)
         {
             printf("Tea 23$, with %d change", y-23);
         }
