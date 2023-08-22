@@ -8,6 +8,15 @@ int main(){
     scanf("%f",&height);
     float half = 0.5;
     float area = half*base*height;
-    printf("%.2f",area);
+    int result;
+    result = (area - (int)area)*10000;
+    if(result == 0){
+        printf("%.0f",area);
+
+    }
+    else{
+        printf("%.2f", area);
+    }
+    
     return 0;
 }
