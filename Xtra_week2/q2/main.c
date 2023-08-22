@@ -8,9 +8,12 @@ int main()
     {
         printf("Negative\n");
     }
-    else if (inp1 >=0)
+    else if (inp1 >0)
     {
         printf("Positive\n");
+    }
+    else{
+        printf("Neither positive nor negative");
     }
     if(inp1%2!=0)
     {
