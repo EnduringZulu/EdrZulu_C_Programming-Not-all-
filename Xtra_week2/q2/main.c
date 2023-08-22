@@ -22,7 +22,7 @@ int main()
     else{
         printf("Even\n");
     }
-    if(inp1==-7||inp1==7 || (inp1%10)*10==7){
+    if(inp1==-7||inp1==7 || (inp1%10)==7){
         printf("Ending with 7\n");
     }
     if(inp1%3==0 && inp1%5==0){

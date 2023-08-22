@@ -12,7 +12,7 @@ int main(){
         printf("Not square %.2f\n", area);
     }
     else{
-        printf("Square Area=%.2f",area);
+        printf("Square\nArea=%.2f",area);
     }
     return 0;
 }
