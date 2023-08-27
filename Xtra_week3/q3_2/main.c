@@ -7,7 +7,7 @@ int main(){
     float sum=0;
     
     while(inp[0]!='q'){
-        scanf("%s", &inp);
+        scanf("%s", &inp[0]);
         if(inp[0]!='q'&& atoi(inp)>=0&&atoi(inp)<=100){
             count+=1;
             sum = sum + atoi(inp);
