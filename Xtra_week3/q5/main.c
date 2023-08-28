@@ -2,14 +2,14 @@
 #include <stdlib.h>
 
 int main(){
-    char inp[10];
+    char inp;
     int v=0,c=0;
     do
     {
-        if(inp[0]=='0'){
+        if(inp=='0'){
             break;
         }
-        switch (inp[0])
+        switch (inp)
         {
         case 'a':
         case 'e':
@@ -29,7 +29,7 @@ int main(){
             
             break;
         }
-        scanf("%c", &inp[0]);
+        scanf("%c", &inp);
     } while (1);
     printf("vowel:%d\n", v);
     printf("consonant:%d",c);
