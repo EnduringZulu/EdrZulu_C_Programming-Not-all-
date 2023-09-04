@@ -5,7 +5,7 @@ int main(){
     do
     {
         scanf("%d",&x);
-    } while (x<50 || x>150);
+    } while (x>=50 && x<=150);
     printf("Input is %c",x);
     return 0;
 }

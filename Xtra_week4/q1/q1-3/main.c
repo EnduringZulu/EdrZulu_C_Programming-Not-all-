@@ -4,7 +4,7 @@ int main(){
     int x;
     do{
         scanf("%d",&x);
-    }while(x%2==0 || x<=0);
+    }while(x%2==1 && x>0);
     printf("Input is %c",x);
     return 0;
 }
