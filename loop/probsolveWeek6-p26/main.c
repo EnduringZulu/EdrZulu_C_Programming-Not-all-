@@ -31,6 +31,7 @@ void No2(int n){
 * * * * *
     */
     //int n;
+    printf("No.2\n");
     for(int i=0;i<n;i++){
         for(int j=0;j<n;j++){
             if(i+j>=n-1){
@@ -47,18 +48,29 @@ void No2(int n){
 void No3(int n){
     // int n;
     // i+j>=n-1 && j-i<=n-1
+    printf("No.3\n");
+    int k=n;
+    for(int i=1;i<=n;i++){
+        for(int j=1;j<=k-1;j++){
+            printf(" ");
+        }
+        for(int j=1;j<=i;j++){
+            printf("* ");
+        }
+        printf("\n");
+        k--;
+    }
+}
+
+void No4(int n){
+    printf("No.4\n");
     int k=n;
     for(int i=0;i<n;i++){
-        for(int j=0;j<n;j++){
-            if(j>=k-1){
-                printf("* ");
-            }
-            else{
-                printf(" ");
-            }
+        for(int j=0;j<k;j++){
+            printf("* ");
         }
-        k--;
         printf("\n");
+        k--;
     }
 }
 
@@ -68,6 +80,8 @@ int main(){
     printf("\n");
     No2(5);
     printf("\n");
-    No3(10);
+    No3(5);
+    printf("\n");
+    No4(5);
     return 0;
 }
