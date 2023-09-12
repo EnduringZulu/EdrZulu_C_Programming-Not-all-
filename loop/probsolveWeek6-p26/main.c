@@ -3,11 +3,11 @@
 void No1(int n){
     /*
 No.1
-*
-* *
-* * *
-* * * *
-* * * * *
+    *
+    * *
+    * * *
+    * * * *
+    * * * * *
 */
     printf("No.1\n");
     //int n;
@@ -24,11 +24,11 @@ No.1
 void No2(int n){
     /*
     No.2
-        *
-      * *
-    * * *
-  * * * *
-* * * * *
+            *
+          * *
+        * * *
+      * * * *
+    * * * * *
     */
     //int n;
     printf("No.2\n");
@@ -49,11 +49,11 @@ void No3(int n){
     // int n;
     // i+j>=n-1 && j-i<=n-1
     /*
-    *
-   * *
-  * * *
- * * * *
-* * * * *
+        *
+       * *
+      * * *
+     * * * *
+    * * * * *
     */
     printf("No.3\n");
     int k=n;
@@ -89,6 +89,13 @@ void No4(int n){
 }
 
 void No5(int n){
+    /*
+    * * * * *
+      * * * *
+        * * *
+          * *
+            *
+    */
     printf("No.5\n");
     for(int i=0;i<n;i++){
         for(int j=0;j<n;j++){
@@ -103,6 +110,30 @@ void No5(int n){
     }
 }
 
+void No6(int n){
+    /*
+    * * * * *
+     * * * *
+      * * *
+       * *
+        *
+    */
+    printf("No.6\n");
+    int k=0;
+    int x=n;
+    for(int out=0;out<n;out++){
+    for(int i=0;i<k;i++){
+        printf(" ");
+    }
+    for(int j=0;j<x;j++){
+        printf("* ");
+    }
+    printf("\n");
+    x--;
+    k++;
+    }
+    
+}
 
 int main(){
     int n;
@@ -116,5 +147,7 @@ int main(){
     No4(n);
     printf("\n");
     No5(n);
+    printf("\n");
+    No6(n);
     return 0;
 }
