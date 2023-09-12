@@ -1,10 +1,10 @@
 #include <stdio.h>
 
 int main(){
-    int countu,countl;
+    int countu=0,countl=0;
     char x;
     while(x!='#'){
-        scanf("%c",&x);
+        scanf(" %c",&x);
         if(x>='A'&& x<='Z'){
             countu+=1;
         }
