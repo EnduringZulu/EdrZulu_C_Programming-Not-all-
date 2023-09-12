@@ -76,12 +76,14 @@ void No4(int n){
 
 
 int main(){
-    No1(5);
+    int n;
+    scanf("%d",&n);
+    No1(n);
     printf("\n");
-    No2(5);
+    No2(n);
     printf("\n");
-    No3(5);
+    No3(n);
     printf("\n");
-    No4(5);
+    No4(n);
     return 0;
 }
