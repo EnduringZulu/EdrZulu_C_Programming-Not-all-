@@ -48,6 +48,13 @@ void No2(int n){
 void No3(int n){
     // int n;
     // i+j>=n-1 && j-i<=n-1
+    /*
+    *
+   * *
+  * * *
+ * * * *
+* * * * *
+    */
     printf("No.3\n");
     int k=n;
     for(int i=1;i<=n;i++){
@@ -63,6 +70,13 @@ void No3(int n){
 }
 
 void No4(int n){
+    /*
+     * * * * *
+     * * * *
+     * * *
+     * *
+     *
+     */
     printf("No.4\n");
     int k=n;
     for(int i=0;i<n;i++){
@@ -71,6 +85,21 @@ void No4(int n){
         }
         printf("\n");
         k--;
+    }
+}
+
+void No5(int n){
+    printf("No.5\n");
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+            if(j>=i){
+                printf("* ");
+            }
+            else{
+                printf("  ");
+            }
+        }
+        printf("\n");
     }
 }
 
@@ -85,5 +114,7 @@ int main(){
     No3(n);
     printf("\n");
     No4(n);
+    printf("\n");
+    No5(n);
     return 0;
 }
