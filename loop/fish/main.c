@@ -4,7 +4,7 @@ int main(){
     int n,a=1,b=0,c=0;
     scanf("%d",&n);
     int space1=n*2,space2=n-1;
-    if(n<2){
+    if(n<=2){
         printf("Invalid input");
     }
     else{
