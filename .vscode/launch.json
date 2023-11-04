@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/mingr/Documents/ICT_C_Programming_Xtra/Lab9/Pract_q2",
-      "program": "c:/Users/mingr/Documents/ICT_C_Programming_Xtra/Lab9/Pract_q2/build/Debug/outDebug",
+      "cwd": "c:/Users/mingr/Documents/ICT_C_Programming_Xtra/WHY_SO_SERIOUS/q3",
+      "program": "c:/Users/mingr/Documents/ICT_C_Programming_Xtra/WHY_SO_SERIOUS/q3/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
