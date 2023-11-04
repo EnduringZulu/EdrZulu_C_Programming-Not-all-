@@ -22,7 +22,7 @@
 int sum(int a, int b);
 int square(int a);
 int array_sum(int a[], int b);
-int array_average(int a[], int b);
+float array_average(int a[], int b);
 int max(int a, int b);
 int max_index(int a[], int b);
 int is_even(int a);
@@ -112,8 +112,8 @@ int array_sum(int a[], int b){
     }
     return res;
 }
-int array_average(int a[], int b){
-    int res = 0;
+float array_average(int a[], int b){
+    float res = 0;
     for (int i = 0; i < b; i++)
     {
         res += a[i];
@@ -125,11 +125,13 @@ int max(int a,int b){
     return b;
 }
 int max_index(int a[],int b){
+    int num,max=-9999;
     for(int i=0;i<b;i++){
-        if(i+1==b){
-            return i;
+        if(a[i]>max){
+            num=i;
         }
     }
+    return num;
 }
 int is_even(int a){
     if(a%2==0)return 1;
@@ -137,7 +139,7 @@ int is_even(int a){
 }
 int is_prime(int a){
     int count=0;
-    for(int i=2;i<a;i++){
+    for(int i=2;i<=a;i++){
         if(a%i==0){
             count++;
         }
@@ -146,7 +148,7 @@ int is_prime(int a){
     return 0;
 }
 int power(int a,int b){
-    if(b>1){
-        return power(a,a-1);
+    if(b>=1){
+        return a*power(a,b-1);
     }return 1;
 }
