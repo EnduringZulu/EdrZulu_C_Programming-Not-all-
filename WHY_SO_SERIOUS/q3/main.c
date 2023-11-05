@@ -28,3 +28,40 @@ int main(){
     return 0;
 }
 */
+#include <string.h>
+
+void roman(int n,char *arr){
+    int M = n / 1000;
+    int D = (n % 1000) / 500;
+    int C = (n % 1000) % 500 / 100;
+    int L = ((n % 1000) % 500) % 100 / 50;
+    int X = ((((n % 1000) % 500) % 100) % 50) / 10;
+    int V = (((((n % 1000) % 500) % 100) % 50) % 10) / 5;
+    int I = ((((((n % 1000) % 500) % 100) % 50) % 10) % 5);
+    int arrnumchar[7] = {M, D, C, L, X, V, I};
+
+    *arr ="";
+    for (int i = 0; i < 7; i++)
+    {
+        for (int j = 0; j < arrnumchar[i]; j++)
+        {
+            if (i == 0)strcat(arr,"M");
+            else if (i == 1)strcat(arr, "D");
+            else if (i == 2)strcat(arr, "C");
+            else if (i == 3)strcat(arr, "I");
+            else if (i == 4)strcat(arr, "X");
+            else if (i == 5)strcat(arr, "V");
+            else if (i == 6)strcat(arr, "I");
+        }
+    }
+}
+
+int main()
+{
+    int n;
+    char arr[10];
+    scanf("%d", &n);
+    roman(n,arr);
+    printf("%s",arr);
+    return 0;
+}
