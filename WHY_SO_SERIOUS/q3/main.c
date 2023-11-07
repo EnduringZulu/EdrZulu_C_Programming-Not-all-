@@ -51,7 +51,8 @@ void roman(int n,char *arr){
             else if (i == 3)strcat(arr, "I");
             else if (i == 4)strcat(arr, "X");
             else if (i == 5)strcat(arr, "V");
-            else if (i == 6)strcat(arr, "I");
+            else if(i == 6 && I ==4){strcat(arr,"IV");break;}
+            else if (i == 6 && I != 4)strcat(arr, "I");
         }
     }
 }
