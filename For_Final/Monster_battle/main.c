@@ -27,7 +27,7 @@ int main()
     struct Tamerscard play[num_play];
     for (int i = 0; i < num_play; i++)
     {
-        scanf("%s %d %f %f", play[i].name_play, &play[i].age, &play[i].win_rate, &play[i].lose_rate);
+        scanf("%s %d %d %d", play[i].name_play, &play[i].age, &play[i].win_rate, &play[i].lose_rate);
         scanf("%s %c %f %f %f %f", play[i].poke.name_poke, &play[i].poke.element, &play[i].poke.HP, &play[i].poke.spd, &play[i].poke.atk, &play[i].poke.def);
     }
     scanf("%d", &max_turn);
@@ -100,7 +100,7 @@ int system(struct Tamerscard ply1_fast, struct Tamerscard ply2_slow)
             i++;
             if (ply2_slow.poke.HP <= 0,00)
             {
-                ply1_fast.win_rate++;
+                *ply1_fast.win_rate++;
                 break;
             }
             printf("Turn %d: %s causes %.2f the damage to %s, HP of %s drops from %.2f to %.2f\n", i, ply2_slow.poke.name_poke, strong_atk(ply1_fast, ply2_slow), ply2_slow.poke.name_poke, ply2_slow.poke.name_poke, ply2_slow.poke.HP, ply2_slow.poke.HP - strong_atk(ply1_fast, ply2_slow));
