@@ -17,7 +17,7 @@ struct Tamerscard
 float strong_atk(struct Tamerscard gotatk, struct Tamerscard atk);
 float weak_atk(struct Tamerscard gotatk, struct Tamerscard atk);
 float normal_atk(struct Tamerscard gotatk, struct Tamerscard atk);
-int system(struct Tamerscard ply1_fast, struct Tamerscard ply2_slow);
+int system(struct Tamerscard ply1_fast, struct Tamerscard ply2_slow,int *maxt);
 
 int main()
 {
@@ -36,18 +36,12 @@ int main()
     old2 = play[player2].win_rate;
     if (play[player1].poke.spd > play[player2].poke.spd){
         printf("The first start is %s's %s\n", play[player1].name_play, play[player1].poke.name_poke);
-        system(play[player1], play[player2]);
+        system(play[player1], play[player2],&max_turn);
     }else{
         printf("The first start is %s's %s\n", play[player2].name_play, play[player2].poke.name_poke);
-        system(play[player2], play[player1]);
+        system(play[player2], play[player1],&max_turn);
     }
-    if (play[player1].win_rate == old1+1)
-    {
-        printf("The winner is %s (%d) using %s (win: %d lose: %d)", play[player1].name_play, play[player1].age, play[player1].poke.name_poke, play[player1].win_rate, play[player1].lose_rate);
-    }
-    else{
-        printf("The winner is %s (%d) using %s (win: %d lose: %d)", play[player2].name_play, play[player2].age, play[player2].poke.name_poke, play[player2].win_rate, play[player2].lose_rate);
-    }
+    
 }
 
 // Your function definition started here (If any)
@@ -62,12 +56,15 @@ float normal_atk(struct Tamerscard gotatk, struct Tamerscard atk){
     return (atk.poke.atk) - gotatk.poke.def;
 }
 
-int system(struct Tamerscard ply1_fast, struct Tamerscard ply2_slow)
+
+
+int system(struct Tamerscard ply1_fast, struct Tamerscard ply2_slow,int *maxt)
 {
     int i=1;
-    
-    while (ply1_fast.poke.HP > 0 || ply2_slow.poke.HP > 0)
+    int old1 = ply1_fast.win_rate,old2 = ply2_slow.win_rate;
+    while ((ply1_fast.poke.HP > 0 || ply2_slow.poke.HP > 0)&&i!=*maxt+1)
     {
+        if(i==*maxt+1){break;}
         if ((ply1_fast.poke.element == 'F' && ply2_slow.poke.element == 'P') || (ply1_fast.poke.element == 'W' && ply2_slow.poke.element == 'F') || (ply1_fast.poke.element == 'P' && ply2_slow.poke.element == 'W'))
         {
             if (ply2_slow.poke.HP - strong_atk(ply2_slow, ply1_fast)<0){
@@ -95,15 +92,17 @@ int system(struct Tamerscard ply1_fast, struct Tamerscard ply2_slow)
             }
         }
         else if ((ply1_fast.poke.element == 'P' && ply2_slow.poke.element == 'F') || (ply1_fast.poke.element == 'F' && ply2_slow.poke.element == 'W') || (ply1_fast.poke.element == 'W' && ply2_slow.poke.element == 'P')){
+            if (ply2_slow.poke.HP - weak_atk(ply2_slow, ply1_fast) < 0)printf("Turn %d: %s causes %.2f the damage to %s, HP of %s drops from %.2f to 0.00\n", i, ply1_fast.poke.name_poke, weak_atk(ply2_slow, ply1_fast), ply2_slow.poke.name_poke, ply2_slow.poke.name_poke, ply2_slow.poke.HP);
             printf("Turn %d: %s causes %.2f the damage to %s, HP of %s drops from %.2f to %.2f\n", i, ply1_fast.poke.name_poke, weak_atk(ply2_slow, ply1_fast), ply2_slow.poke.name_poke, ply2_slow.poke.name_poke, ply2_slow.poke.HP, ply2_slow.poke.HP - weak_atk(ply2_slow, ply1_fast));
             ply2_slow.poke.HP -= weak_atk(ply2_slow, ply1_fast);
             i++;
-            if (ply2_slow.poke.HP <= 0,00)
+            if (ply2_slow.poke.HP <= 0.00)
             {
-                *ply1_fast.win_rate++;
+                ply1_fast.win_rate++;
                 break;
             }
-            printf("Turn %d: %s causes %.2f the damage to %s, HP of %s drops from %.2f to %.2f\n", i, ply2_slow.poke.name_poke, strong_atk(ply1_fast, ply2_slow), ply2_slow.poke.name_poke, ply2_slow.poke.name_poke, ply2_slow.poke.HP, ply2_slow.poke.HP - strong_atk(ply1_fast, ply2_slow));
+            if (ply1_fast.poke.HP - strong_atk(ply1_fast, ply2_slow) < 0)printf("Turn %d: %s causes %.2f the damage to %s, HP of %s drops from %.2f to 0.00\n", i, ply2_slow.poke.name_poke, strong_atk(ply1_fast, ply2_slow), ply1_fast.poke.name_poke, ply1_fast.poke.name_poke, ply1_fast.poke.HP);
+            else printf("Turn %d: %s causes %.2f the damage to %s, HP of %s drops from %.2f to %.2f\n", i, ply2_slow.poke.name_poke, strong_atk(ply1_fast, ply2_slow), ply1_fast.poke.name_poke, ply1_fast.poke.name_poke, ply1_fast.poke.HP, ply1_fast.poke.HP - strong_atk(ply1_fast, ply2_slow));
             ply1_fast.poke.HP -= strong_atk(ply1_fast, ply2_slow);
             i++;
             if (ply1_fast.poke.HP <= 0.00)
@@ -148,5 +147,13 @@ int system(struct Tamerscard ply1_fast, struct Tamerscard ply2_slow)
                 break;
             }
         }
+    }
+    if (ply1_fast.poke.HP>ply2_slow.poke.HP)
+    {
+        printf("The winner is %s (%d) using %s (win: %d lose: %d)", ply1_fast.name_play, ply1_fast.age, ply1_fast.poke.name_poke, ply1_fast.win_rate, ply1_fast.lose_rate);
+    }
+    else
+    {
+        printf("The winner is %s (%d) using %s (win: %d lose: %d)", ply2_slow.name_play, ply2_slow.age, ply2_slow.poke.name_poke, ply2_slow.win_rate, ply2_slow.lose_rate);
     }
 }
