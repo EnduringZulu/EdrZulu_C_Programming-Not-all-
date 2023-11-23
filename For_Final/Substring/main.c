@@ -4,9 +4,6 @@
 
 #define MAX 20
 
-char check(char alp){
- return isupper(alp) ? tolower(alp) : alp;
-}
 
 int main() {
   // Your code started here.
@@ -17,7 +14,7 @@ int main() {
   for(int i=0;i<strlen(sent);i++){
     int count=0;
     for(int j=0;j<strlen(find);j++){
-      if(check(sent[i+j])==check(find[j]))count++;
+      if(tolower(sent[i+j])==tolower(find[j]))count++;
     }
     if(count==strlen(find)){
       printf("found at %d to %d positions\n",i,i+count-1);
