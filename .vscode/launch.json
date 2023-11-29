@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/mingr/Documents/ICT_C_Programming_Xtra/For_Final/Monster_battle",
-      "program": "c:/Users/mingr/Documents/ICT_C_Programming_Xtra/For_Final/Monster_battle/build/Debug/outDebug",
+      "cwd": "c:/Users/mingr/Documents/ICT_C_Programming_Xtra/w3resource/pointer/q13",
+      "program": "c:/Users/mingr/Documents/ICT_C_Programming_Xtra/w3resource/pointer/q13/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
