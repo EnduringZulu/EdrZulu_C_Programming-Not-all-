@@ -8,8 +8,13 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
+<<<<<<< HEAD
       "cwd": "c:/Users/mingr/Documents/ICT_C_Programming_Xtra/For_Final/Substring",
       "program": "c:/Users/mingr/Documents/ICT_C_Programming_Xtra/For_Final/Substring/build/Debug/outDebug",
+=======
+      "cwd": "c:/Users/mingr/Documents/ICT_C_Programming_Xtra/w3resource/pointer/q13",
+      "program": "c:/Users/mingr/Documents/ICT_C_Programming_Xtra/w3resource/pointer/q13/build/Debug/outDebug",
+>>>>>>> 503abdd2d3f3178171c000591dd2d9cdd9195115
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
